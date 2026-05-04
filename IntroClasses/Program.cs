@@ -10,14 +10,19 @@ public class Program
         startingPosition.X = 0;
         startingPosition.Y = 0;
         // startingPosition = new Vector2(0, 0);
-        Player anotherHero = new Player(startingPosition);
-        
-        hero.Display();
-        anotherHero.Display();
+        Character anotherHero = new Npc(startingPosition);
+        List<Character> characters = [hero, anotherHero];
+
+        foreach (Character character in characters)
+        {
+            character.Display();
+        }
         while (isPlaying)
         {
-            isPlaying = hero.TakeTurn();
-            isPlaying = anotherHero.TakeTurn();
+            foreach (Character character in characters)
+            {
+                character.TakeTurn();
+            }
         }
         
         Console.WriteLine("Goodbye!");
