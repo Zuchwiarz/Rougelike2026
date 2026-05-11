@@ -2,16 +2,22 @@ namespace IntroClasses;
 
 public class Player : Character
 {
-    
+    private readonly Dictionary<ConsoleKeyInfo, bool> _inputMap;    
 
-    public Player(Vector2 startingPosition) : base(startingPosition)
+    public Player(Vector2 startingPosition, Dictionary<ConsoleKey,Vector2> inputMap) : base(startingPosition)
     {
+        _inputMap = inputMap;
     }
     
 
     public override bool TakeTurn()
     {
         var isPlaying = IsPlaying(out var input);
+        
+        // tutaj dorobić
+        Vector2 direction = _inputMap
+            
+        
         switch (input.Key)
         {
             case ConsoleKey.S:
