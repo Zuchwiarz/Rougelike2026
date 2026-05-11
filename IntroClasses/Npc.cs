@@ -20,7 +20,7 @@ public class Npc : Character
         new Vector2(0,1),
         ];
         int index = Random.Shared.Next(0, availableDirections.Count);
-        Move(availableDirections[index].X,availableDirections[index].Y);
+        Move(availableDirections[index]);
         Display();
         return true;
     }
