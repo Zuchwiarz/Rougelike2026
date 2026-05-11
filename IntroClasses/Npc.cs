@@ -11,7 +11,12 @@ public class Npc : Character
     {
         Console.SetCursorPosition(left:_position.X,top:_position.Y);
         Console.Write(" ");
-        Move(1,1);
+        Random rnd = new Random();
+        int NPCdirectionX = rnd.Next(-1,2);
+        int NPCdirectionY = rnd.Next(-1,2);
+        int targetX = Random.Shared.Next(-1, 2);
+        int targetY = Random.Shared.Next(-1, 2);
+        Move(targetX,targetY);
         Display();
         return true;
     }
